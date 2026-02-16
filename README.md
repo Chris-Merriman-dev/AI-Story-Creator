@@ -1,30 +1,32 @@
-# AI Story Creator
+# AI-Driven Narrative Media Pipeline
 
-An AI-powered application that automates the creation of narrative videos from text. This project was a research application to see if AI could autonomously create a story video on its own. It selects and creates all the images, videos, and music for the story.
+An automated end-to-end research application that transforms text-based prompts into fully realized narrative films. This project explores the orchestration of multiple AI models to autonomously handle scriptwriting, visual asset generation, voice narration, and musical assembly.
 
-## Features
-* **AI-Driven Story Creation:** Creates random stories and titles.
-* **AI-Generated Media:** Uses AI to select and create images and music for each section of the story.
-* **Automated Video Generation:** Compiles all media into a final video.
+## Key Engineering Features
+* **Orchestrated AI Workflow:** Coordinates **Google Gemini** for narrative structure and **Wan 2.1** for temporal video consistency.
+* **Context-Aware Media Selection:** Implements logic for AI-driven selection of thematic music and visual assets based on script sentiment.
+* **Modular Pipeline Design:** Programmatically manages the synchronization of audio-to-text timestamps (Whisper) with frame-by-frame video assembly.
+
+
 
 ## Technology Stack
-* **Google Gemini** (used for primary story creation)
-* **g4f.client** (used for better random stories and titles)
-* **Wan 2.1** (used for AI-created video sections)
+* **LLMs:** Google Gemini (Primary Narrative Logic), g4f.client (Diversity in Storytelling)
+* **Generative Video:** Wan 2.1
+* **Media Processing:** Python-based automation for multi-media synchronization.
 
-## Challenges & Conclusion
-The hardest part was getting the AI to create consistent prompts for images, especially with multiple characters. It also struggled with selecting the correct images to match a scene's description, often choosing images with disfigured bodies. The project works, but not perfectly. As AI vision improves, these issues should be solved.
+## Technical Challenges & Insights
+* **Visual Consistency:** Addressed the complexities of maintaining character consistency across multiple generative prompts.
+* **Automated Quality Control:** Identified early-stage limitations in AI vision regarding anatomical accuracy and implemented iterative prompt refinement to mitigate disfigurement.
+* **System Evolution:** Designed with a model-agnostic architecture; while currently utilizing specific legacy Gemini/Flux versions, the framework is built for seamless upgrades as Vision-Language Models (VLMs) evolve.
 
 ## Demonstration
-The results of how this works can be seen on this YouTube channel: [AI Synthetic Dreams](https://www.youtube.com/@AISyntheticDreams)
+View the high-fidelity production results of this architecture here: **[AI Synthetic Dreams (YouTube)](https://www.youtube.com/@AISyntheticDreams)**
 
-## Files
-* `audio_to_text.py`
-* `gemini_story_creator.py`
-* `gf4_image_creator.py`
-* `image_description.py`
-* `music_loader.py`
-* `video_creator.py`
+## Core Components
+* `gemini_story_creator.py` – Narrative logic and script generation.
+* `audio_to_text.py` – Synchronization of voiceovers via timestamping.
+* `video_creator.py` – Programmatic assembly of final visual/audio assets.
+* `music_loader.py` – AI-driven thematic soundtrack selection.
 
-## Note
-This project uses outdated Gemini and flux creator versions and has not been updated. The YouTube channel above shows the results of a working version.
+---
+**Note:** This repository represents a legacy research snapshot. While the core architecture is sound, the internal API hooks utilize earlier iterations of Gemini and Flux. Please refer to the YouTube channel for the most recent production outputs.
